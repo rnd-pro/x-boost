@@ -1,5 +1,5 @@
 import { X } from '../core/X.js';
-import { getHash } from '../jam-tools/iso/getHash.js';
+// import { getHash } from '../jam-tools/iso/getHash.js';
 
 let AiProxyPort = '8080';
 
@@ -26,18 +26,18 @@ export class XAIImg extends X {
       this.img = new Image();
     }
 
-    let promptHash = await getHash(prompt);
-    let b64Img = await XAIImg.cache.read(promptHash);
+    // let promptHash = await getHash(prompt);
+    // let b64Img = await XAIImg.cache.read(promptHash);
 
-    if (!b64Img) {
-      b64Img = await (await fetch(`http://localhost:${AiProxyPort}/img/`, {
-        method: 'POST',
-        body: prompt,
-      })).text();
-      await XAIImg.cache.write(promptHash, b64Img);
-    }
+    // if (!b64Img) {
+    //   b64Img = await (await fetch(`http://localhost:${AiProxyPort}/img/`, {
+    //     method: 'POST',
+    //     body: prompt,
+    //   })).text();
+    //   await XAIImg.cache.write(promptHash, b64Img);
+    // }
 
-    this.img.src = `data:image/png;base64,${b64Img}`;
+    // this.img.src = `data:image/png;base64,${b64Img}`;
     this.img.alt = prompt;
     if (!this.img.isConnected) {
       this.appendChild(this.img);

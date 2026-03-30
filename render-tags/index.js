@@ -1,5 +1,5 @@
 export * from './x-doc.js';
-export * from './x-dwa.js';
+export * from './x-jsda.js';
 export * from './x-md.js';
 export * from './x-itemize.js';
 export * from './x-import.js';

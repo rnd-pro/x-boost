@@ -1,5 +1,5 @@
 import X from '../core/X.js';
-import { applyData } from '../jam-tools/iso/applyData.js';
+// import { applyData } from '../jam-tools/iso/applyData.js';
 
 export class XItemize extends X {
   initCallback() {
@@ -21,7 +21,7 @@ export class XItemize extends X {
       let html = '';
       if (Array.isArray(data)) {
         data.forEach((desc) => {
-          html += applyData(template.innerHTML, desc);
+          // html += applyData(template.innerHTML, desc);
         });
       } else if (data.constructor === Object) {
         for (let key in data) {
@@ -29,7 +29,7 @@ export class XItemize extends X {
             _KEY_: key,
             ...data[key],
           };
-          html += applyData(template.innerHTML, desc);
+          // html += applyData(template.innerHTML, desc);
         }
       }
       this.outerHTML = html;

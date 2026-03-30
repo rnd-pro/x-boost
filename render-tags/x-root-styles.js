@@ -8,7 +8,7 @@ export class XRootStyles extends X {
       if (!root) {
         return;
       }
-      let cssTxt = await this.getDwa(src);
+      let cssTxt = await this.getJSDA(src);
       let styleSheet = new CSSStyleSheet();
       styleSheet.replaceSync(cssTxt);
       // @ts-ignore

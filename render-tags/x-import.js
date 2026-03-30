@@ -7,7 +7,7 @@ export class XImport extends X {
         return;
       }
       this.importTextAsset(src).then((assetTxt) => {
-        this.applyOuterHTML(assetTxt);
+        // this.applyOuterHTML(assetTxt);
       });
     });
   }

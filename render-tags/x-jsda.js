@@ -1,18 +1,18 @@
 import { X } from '../core/X.js';
-export class XDWA extends X {
+export class XJSDA extends X {
 
   initCallback() {
     this.sub('src', async (/** @type {String} */ val) => {
-      this.applyOuterHTML(await this.getDwa(val));
+      // this.applyOuterHTML(await this.getDwa(val));
     });
   }
 
 }
 
-XDWA.bindAttributes({
+XJSDA.bindAttributes({
   src: 'src',
 });
 
-XDWA.reg('x-dwa');
+XJSDA.reg('x-dwa');
 
-export default XDWA;
+export default XJSDA;
