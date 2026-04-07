@@ -34,28 +34,19 @@ The easiest way to try &lt;x-boost&gt; is to create a simple `html` file in your
 ## X-IMPORT
 
 ```html
-<x-import 
-  src="./document.html" 
-  data-src="./data.json">
-</x-import>
+<x-import src="./document.html"></x-import>
 ```
 
 ## X-MD
 
 ```html
-<x-md
-  src="./doc.md" 
-  data-src="./data.json">
-</x-md>
+<x-md src="./doc.md"></x-md>
 ```
 
 ## X-JSDA
 
 ```html
-<x-jsda 
-  src="./document.html.js" 
-  data-src="./data.json">
-</x-jsda>
+<x-jsda src="./document.html.js"></x-jsda>
 ```
 
 ## X-LIST
@@ -68,11 +59,11 @@ OR:
 
 ```html
 <template id="item-tpl">
-  <ul>
-    <li>{{item1}}</li>
-    <li>{{item2}}</li>
-    <li>{{item3}}</li>
-  </ul>
+  <div class="list-item">
+    <div>{{name}}</div>
+    <div>{{age}}</div>
+    <div>{{city}}</div>
+  </div>
 </template>
 
 <x-list data-src="./data.json" template-id="item-tpl"></x-list>

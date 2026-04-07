@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "x-boost",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "The set of ready-made web components for building web applications without a touch of JS.",
   "scripts": {
     "types": "tsc",
@@ -10,11 +10,8 @@
   },
   "module": "./index.js",
   "exports": {
-    ".": "./index.js",
-    "./iso": "./iso/index.js",
+    "./tags": "./tags/index.js",
     "./core": "./core/index.js",
-    "./ext": "./ext/index.js",
-    "./utils": "./utils/index.js",
     "./**/*.js": "./**/*.js"
   },
   "types": "./types/index.d.ts",
@@ -43,7 +40,7 @@
     "no-js"
   ],
   "dependencies": {
-    "@symbiotejs/symbiote": "^3.5.7"
+    "@symbiotejs/symbiote": "^3.5.8"
   },
   "devDependencies": {
     "typescript": "^6.0.2"

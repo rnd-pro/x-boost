@@ -1,12 +1,12 @@
 import { X } from '../core/X.js';
 
-class XObjectUiRow extends X {
+class XCfgRow extends X {
 
   isoMode = true;
 
-  /** @type {XObjectUi} */
+  /** @type {XCfg} */
   get parent() {
-    return this.closest('x-object-ui');
+    return this.closest('x-cfg');
   }
 
   init$ = {
@@ -78,8 +78,8 @@ class XObjectUiRow extends X {
           renderInput('checkbox');
         },
         object: () => {
-          let xTable = new XObjectUi();
-          window.customElements.whenDefined('x-object-ui').then(() => {
+          let xTable = new XCfg();
+          window.customElements.whenDefined('x-cfg').then(() => {
             xTable.$.data = val;
           });
           if (this.parent.hasAttribute('editable')) {
@@ -96,8 +96,8 @@ class XObjectUiRow extends X {
   }
 }
 
-XObjectUiRow.rootStyles = /*css*/ `
-x-object-ui-row {
+XCfgRow.rootStyles = /*css*/ `
+x-cfg-row {
   display: table-row;
 
   td.key {
@@ -108,15 +108,15 @@ x-object-ui-row {
     width: 100%;
   }
 }
-x-object-ui-row td.row-btn {
+x-cfg-row td.row-btn {
   display: none;
 }
-x-object-ui[editable] td.row-btn {
+x-cfg[editable] td.row-btn {
   display: table-cell;
 }
 `;
 
-XObjectUiRow.template = /*html*/ `
+XCfgRow.template = /*html*/ `
 <td class="key">{{key}}</td>
 <td class="value" ref="value"></td>
 <td class="row-btn">
@@ -124,9 +124,9 @@ XObjectUiRow.template = /*html*/ `
 </td>
 `;
 
-XObjectUiRow.reg('x-object-ui-row');
+XCfgRow.reg('x-cfg-row');
 
-export class XObjectUi extends X {
+export class XCfg extends X {
 
   isoMode = true;
 
@@ -199,12 +199,12 @@ export class XObjectUi extends X {
   }
 }
 
-XObjectUi.bindAttributes({
+XCfg.bindAttributes({
   editable: 'editable',
 });
 
-XObjectUi.rootStyles = /*css*/ `
-x-object-ui {
+XCfg.rootStyles = /*css*/ `
+x-cfg {
   position: relative;
   display: inline-block;
   margin: 20px;
@@ -216,7 +216,7 @@ x-object-ui {
     border-radius: 8px;
   }
 
-  x-object-ui-row {
+  x-cfg-row {
     td {
       padding: 6px;
       background-color: #fff;
@@ -269,11 +269,11 @@ x-object-ui {
 }
 `;
 
-XObjectUi.template = /*html*/ `
+XCfg.template = /*html*/ `
 <table>
   <tbody
     itemize="tbodyData"
-    item-tag="x-object-ui-row"></tbody>
+    item-tag="x-cfg-row"></tbody>
 </table>
 <div class="toolbar editable">
   <input class="field-name" type="text" ref="fieldName">
@@ -288,6 +288,6 @@ XObjectUi.template = /*html*/ `
 </div>
 `;
 
-XObjectUi.reg('x-object-ui');
+XCfg.reg('x-cfg');
 
-export default XObjectUi;
+export default XCfg;

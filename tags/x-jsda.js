@@ -13,6 +13,6 @@ XJSDA.bindAttributes({
   src: 'src',
 });
 
-XJSDA.reg('x-dwa');
+XJSDA.reg('x-jsda');
 
 export default XJSDA;

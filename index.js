@@ -1,2 +1,2 @@
 export * from './core/index.js';
-export * from './render-tags/index.js';
+export * from './tags/index.js';
